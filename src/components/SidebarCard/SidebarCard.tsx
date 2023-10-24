@@ -1,7 +1,7 @@
 import cls from './SidebarCard.module.css'
 import {Note} from "../../types";
 import {useAppDispatch} from "../../app/hooks.ts";
-import {setActive} from "../../app/notesSlice.ts";
+import {removeNote, setActive, setRemoved} from "../../app/notesSlice.ts";
 import {useState} from "react";
 
 type Props = {
@@ -19,9 +19,11 @@ const SidebarCard = (props: Props) => {
     }
 
     const removeNoteHandler = (e: React.MouseEvent) => {
-        if (deleted) { setDeleted(false); e.stopPropagation(); return }
-        // dispatch(removeNote({text: note.text, title: note.title}))
-        setDeleted(true)
+        dispatch(removeNote({text: note.text, title: note.title}))
+        dispatch(setActive({text: '', title: ''}))
+        // if (deleted) { setDeleted(false); e.stopPropagation(); return }
+        // dispatch(setRemoved(note))
+        // setDeleted(true)
         e.stopPropagation()
     }
 

@@ -21,10 +21,56 @@
     display: flex;
 }
 
+.buttonsBlock span{
+    margin-left: 1rem;
+    display: inline-flex;
+    align-items: center;
+    color: var(--error);
+}
+
+.buttonsBlock button:nth-child(2){
+    display: none;
+}
+
 .title{
     margin-top: 2rem;
     line-height: 2rem;
     font-size: 18px;
     padding: 0 1rem;
     border-radius: var(--radius-sm);
+}
+
+@media screen and (max-width: 420px){
+    .editor{
+        display: none;
+        position: absolute;
+        top: 0;
+        background-color: var(--blueberry);
+        height: 100vh;
+        padding: 1rem;
+    }
+    .title{
+        font-size: 22px;
+    }
+    .textArea{
+        margin-top: 1rem;
+        width: 100%;
+        height: 100%;
+        padding: 1rem;
+        font-size: 20px;
+        resize: none;
+        max-width: unset;
+    }
+    .buttonsBlock{
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .buttonsBlock span{
+        width: 100vw;
+        display: block;
+        margin: 1rem auto 0;
+    }
+    .buttonsBlock button:nth-child(2){
+        display: block;
+    }
 }
