@@ -1,0 +1,19 @@
+:root {
+    --dark-bg: #fff;
+    --bg: #eff5f6;
+    --light-bg: #D4DEFE;
+    --toolbar-bg: #D4DEFE;
+    --card-bg: #FFF;
+    --text: #141c1f;
+    --hint: #adbcc0;
+    --cancel: #f77;
+    --save: #62de85;
+    --icon: #5ed3f3;
+    --accent: #00c8ff;
+
+    --button-hover: #efefef;
+    --button: #fcfcfc;
+    --button-disabled: rgba(252, 252, 252, 0.5);
+
+    --focus: #8da0ea;
+}

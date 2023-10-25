@@ -4,5 +4,36 @@
   margin: 0;
 
   display: flex;
-  justify-content: start;
+  justify-content: center;
+}
+
+@media screen and (max-width: 420px){
+  #root{
+    display: block;
+  }
+}
+
+.quill {
+  border-radius: 30px;
+}
+
+.ql-container{
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+  background: var(--card-bg);
+}
+
+.ql-toolbar {
+  background: var(--toolbar-bg);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0 ;
+  color: red;
+}
+
+.ql-toolbar span button:hover {
+  background: var(--card-bg);
+}
+
+.hide {
+  display: none;
+  z-index: -1;
+  opacity: 0;
 }

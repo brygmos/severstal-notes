@@ -1,0 +1,19 @@
+.app_dark_theme {
+    --dark-bg: #090f11;
+    --bg: #1a1a1a;
+    --light-bg: #3b3b3b;
+    --toolbar-bg: #c2c2c2;
+    --card-bg: #727272;
+    --text: #dbdbdb;
+    --hint: #555;
+    --cancel: #d95757;
+    --save: #6cd98b;
+    --icon: #74a2b2;
+    --accent: #5ed3f3;
+
+    --button-hover: #4f4f4f;
+    --button: #727272;
+    --button-disabled: rgba(252, 252, 252, 0.5);
+
+    --focus: #fff;
+}

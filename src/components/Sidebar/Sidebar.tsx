@@ -3,13 +3,24 @@ import {useAppDispatch, useAppSelector} from "../../app/hooks.ts";
 import {selectNotes, setActive} from "../../app/notesSlice.ts";
 import {Note} from "../../types";
 import SidebarCard from "../SidebarCard/SidebarCard.tsx";
+import {useEffect} from "react";
+import {NOTES_LOCALSTORAGE_KEY} from "../../app/const";
+import editorCls from '../TextEditor/TextEditor.module.css'
 
 const Sidebar = () => {
     const dispatch = useAppDispatch()
+
     const notes: Note[] = useAppSelector(selectNotes)
+
+    useEffect(() => {
+        return () => {
+            localStorage.setItem(NOTES_LOCALSTORAGE_KEY, JSON.stringify(notes))
+        }
+    }, [])
 
     const addHandler = () => {
         dispatch(setActive({text: '', title: ''}))
+        document.querySelector('.' + editorCls.editor)?.classList.remove('hide')
     }
 
     return (

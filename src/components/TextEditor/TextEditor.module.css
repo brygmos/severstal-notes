@@ -1,24 +1,41 @@
 .editor{
     width: 100%;
-    height: auto;
+    height: 100%;
     display: flex;
     flex-direction: column;
 }
 
 .textArea{
     margin-top: 2rem;
-    min-height: 300px;
-    height: 70vh;
+    min-height: 100px;
     border-radius: var(--radius-sm);
-    padding: 1rem;
     font-size: 16px;
-    resize: horizontal;
-    min-width: 320px;
-    max-width: calc(100vw - 400px);
+    min-width: 380px;
+}
+
+.textArea {
+    height: calc(100% - 185px);
 }
 
 .buttonsBlock{
     display: flex;
+    justify-content: space-between;
+}
+
+.dummy {
+    height: 24px;
+}
+
+.buttonsBlock span{
+    margin-left: 1rem;
+    display: inline-flex;
+    align-items: center;
+    color: var(--error);
+    order: 2;
+}
+
+.buttonsBlock button:nth-child(2){
+    order: 3;
 }
 
 .title{
@@ -27,4 +44,37 @@
     font-size: 18px;
     padding: 0 1rem;
     border-radius: var(--radius-sm);
+    /*width: calc(100% - 2rem);*/
+    width: 100%;
+}
+
+@media screen and (max-width: 420px){
+    .editor{
+        position: absolute;
+        top: 0;
+        background-color: var(--light-bg);
+        height: 100vh;
+        padding: 1rem;
+    }
+    .title{
+        font-size: 22px;
+        margin-top: 0;
+    }
+    .textArea{
+        margin-top: 1rem;
+        width: 100%;
+        font-size: 20px;
+        resize: none;
+        max-width: unset;
+    }
+    .buttonsBlock{
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .buttonsBlock span{
+        order: 3;
+        width: 100vw;
+        display: block;
+        margin: 1rem auto 0;
+    }
 }
