@@ -1,0 +1,22 @@
+:root {
+    --dark-bg-redesigned: #fff;
+    --bg-redesigned: #eff5f6;
+    --light-bg-redesigned: #e2eef1;
+    --text-redesigned: #141c1f;
+    --hint-redesigned: #adbcc0;
+    --cancel-redesigned: #f77;
+    --save-redesigned: #62de85;
+    --icon-redesigned: #5ed3f3;
+    --accent-redesigned: #00c8ff;
+
+    --focus-redesigned: #fff;
+
+    --skeleton-color: #1515ad;
+        --skeleton-shadow: #2b2be8;
+
+    --code-bg: #afafaf;
+
+    --card-bg: #b9b9b9;
+
+    --listbox-bg: #b9b9b9;
+}

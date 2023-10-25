@@ -1,4 +1,6 @@
 @import "style/vars.css";
+@import "style/themes/light.css";
+@import "style/themes/dark.css";
 
 *{
   margin: 0;
@@ -15,10 +17,12 @@
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light;
-  /*color-scheme: light dark;*/
+  /*color-scheme: light;*/
+  color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  /*background-color: #242424;*/
+  background-color: var(--bg-redesigned);
+
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -42,6 +46,8 @@ body {
   place-items: center;
   min-width: 320px;
   height: 100vh;
+
+  background-color: var(--bg-redesigned);
 }
 
 h1 {
@@ -71,12 +77,14 @@ button {
 @media (prefers-color-scheme: dark) {
   :root {
     color: #213547;
-    background-color: #ffffff;
+    /*background-color: #1a1a1a;*/
+    background-color: var(--bg-redesigned);
+    /*background-color: #ffffff;*/
   }
   a:hover {
     color: #747bff;
   }
   button {
-    background-color: #f9f9f9;
+    background-color: #5d5d5d;
   }
 }
