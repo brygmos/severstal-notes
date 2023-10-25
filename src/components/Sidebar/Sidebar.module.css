@@ -1,6 +1,6 @@
 .sidebar{
-    background-color: var(--blueberry);
-    min-width: 320px;
+    background-color: var(--light-bg);
+    min-width: 220px;
     width: 320px;
     margin: 1em;
     padding: 1em;

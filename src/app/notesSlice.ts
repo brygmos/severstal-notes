@@ -2,13 +2,13 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 import { RootState } from "./store"
 import {Note} from "../types";
 import {NOTES_LOCALSTORAGE_KEY} from "./const";
+import cls from "../components/TextEditor/TextEditor.module.css";
 // import { fetchCount } from "./counterAPI"
 
 export interface NotesState {
     notes: Note[],
     activeNoteContent: Note,
     activeNoteIndex: number,
-    removed: string[],
     activeNoteNotUnique: boolean,
 }
 
@@ -32,7 +32,6 @@ const initialState: NotesState = {
         title: '',
         text: ''
     },
-    removed: [],
     activeNoteIndex: 0,
     activeNoteNotUnique: false
 }
@@ -57,14 +56,12 @@ export const notesSlice = createSlice({
                 localStorage.setItem(NOTES_LOCALSTORAGE_KEY, JSON.stringify(state.notes))
                 state.activeNoteContent = {title: '', text: ''}
                 state.activeNoteNotUnique = false
+                document.querySelector('.' + cls.editor)?.classList.add('hide')
             } else state.activeNoteNotUnique = true
         },
         setActive: (state, action: PayloadAction<Note>) => {
             state.activeNoteContent = action.payload
             state.activeNoteNotUnique = false
-        },
-        setRemoved: (state, action: PayloadAction<Note>) => {
-            state.removed.push(action.payload.title)
         },
         cleanActive: (state) => {
             state.activeNoteContent = {title: '', text: ''}
@@ -97,7 +94,6 @@ export const {
     setActive,
     cleanActive,
     removeNote,
-    setRemoved,
 } = notesSlice.actions
 export const selectNotes = (state: RootState) => state.notes.notes
 export const selectActiveNote = (state: RootState) => state.notes.activeNoteContent

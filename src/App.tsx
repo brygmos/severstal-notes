@@ -6,7 +6,17 @@ import {useEffect} from "react";
 function App() {
 
     useEffect(() => {
-        document.body.className = 'app_dark_theme';
+        const darkModeQuery = window.matchMedia('(prefers-color-scheme: dark)');
+        if(darkModeQuery.matches) document.body.className = 'app_dark_theme';
+        const handleRefresh = () => {
+                document.querySelector("body")?.classList.toggle('app_dark_theme')
+        };
+
+        darkModeQuery.addEventListener('change', handleRefresh);
+
+        return () => {
+            darkModeQuery.removeEventListener('change', handleRefresh);
+        };
         // localStorage.setItem(LOCAL_STORAGE_THEME_KEY, theme);
     }, []);
 

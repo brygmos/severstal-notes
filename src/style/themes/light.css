@@ -1,22 +1,19 @@
 :root {
-    --dark-bg-redesigned: #fff;
-    --bg-redesigned: #eff5f6;
-    --light-bg-redesigned: #e2eef1;
-    --text-redesigned: #141c1f;
-    --hint-redesigned: #adbcc0;
-    --cancel-redesigned: #f77;
-    --save-redesigned: #62de85;
-    --icon-redesigned: #5ed3f3;
-    --accent-redesigned: #00c8ff;
+    --dark-bg: #fff;
+    --bg: #eff5f6;
+    --light-bg: #D4DEFE;
+    --toolbar-bg: #D4DEFE;
+    --card-bg: #FFF;
+    --text: #141c1f;
+    --hint: #adbcc0;
+    --cancel: #f77;
+    --save: #62de85;
+    --icon: #5ed3f3;
+    --accent: #00c8ff;
 
-    --focus-redesigned: #fff;
+    --button-hover: #efefef;
+    --button: #fcfcfc;
+    --button-disabled: rgba(252, 252, 252, 0.5);
 
-    --skeleton-color: #1515ad;
-        --skeleton-shadow: #2b2be8;
-
-    --code-bg: #afafaf;
-
-    --card-bg: #b9b9b9;
-
-    --listbox-bg: #b9b9b9;
+    --focus: #8da0ea;
 }
