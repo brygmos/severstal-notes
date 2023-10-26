@@ -3,7 +3,7 @@ import { RootState } from "./store"
 import {Note} from "../types";
 import {NOTES_LOCALSTORAGE_KEY} from "./const";
 import cls from "../components/TextEditor/TextEditor.module.css";
-// import { fetchCount } from "./counterAPI"
+import {generatePreview} from "./helpers";
 
 export interface NotesState {
     notes: Note[],
@@ -11,10 +11,6 @@ export interface NotesState {
     activeNoteIndex: number,
     activeNoteNotUnique: boolean,
     isEditing: boolean,
-}
-
-function generatePreview(htmlString: string) {
-    return htmlString.substring(0, 50).replace(/<[^>]*>/g, '');
 }
 
 function initNotes () {
@@ -43,15 +39,6 @@ const initialState: NotesState = {
     activeNoteNotUnique: false,
     isEditing: false
 }
-
-// export const incrementAsync = createAsyncThunk(
-//     "counter/fetchCount",
-//     async (amount: number) => {
-//         const response = await fetchCount(amount)
-//         // The value we return becomes the `fulfilled` action payload
-//         return response.data
-//     },
-// )
 
 export const notesSlice = createSlice({
     name: "notes",
@@ -111,19 +98,6 @@ export const notesSlice = createSlice({
             state.activeNoteContent = {title: '', text: ''}
         },
     },
-    // extraReducers: (builder) => {
-    //     builder
-    //         .addCase(incrementAsync.pending, (state) => {
-    //             state.status = "loading"
-    //         })
-    //         .addCase(incrementAsync.fulfilled, (state, action) => {
-    //             state.status = "idle"
-    //             state.value += action.payload
-    //         })
-    //         .addCase(incrementAsync.rejected, (state) => {
-    //             state.status = "failed"
-    //         })
-    // },
 })
 
 export const {
@@ -138,14 +112,5 @@ export const selectNotes = (state: RootState) => state.notes.notes
 export const selectActiveNote = (state: RootState) => state.notes.activeNoteContent
 export const selectActiveNoteNotUnique = (state: RootState) => state.notes.activeNoteNotUnique
 export const selectIsEditing = (state: RootState) => state.notes.isEditing
-
-// export const incrementIfOdd =
-//     (amount: number): AppThunk =>
-//         (dispatch, getState) => {
-//             const currentValue = selectNotes(getState())
-//             if (currentValue % 2 === 1) {
-//                 dispatch(incrementByAmount(amount))
-//             }
-//         }
 
 export default notesSlice.reducer

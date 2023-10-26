@@ -12,3 +12,7 @@ export function setTheme(theme?: ThemeType) {
 export function getTheme() {
     return document.body.classList.contains('app_dark_theme') ? ThemeType.DARK : ThemeType.LIGHT
 }
+
+export function generatePreview(htmlString: string) {
+    return htmlString.substring(0, 50).replace(/<[^>]*>/g, '');
+}
