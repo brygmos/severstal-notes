@@ -3,3 +3,8 @@ export type Note = {
     text: string,
     preview?: string
 }
+
+export enum ThemeType {
+    LIGHT= 'light',
+    DARK= 'dark',
+}

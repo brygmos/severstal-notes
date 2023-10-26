@@ -1,6 +1,7 @@
 #root {
   width: 100%;
   height: 100vh;
+  min-height: 300px;
   margin: 0;
 
   display: flex;
@@ -20,6 +21,7 @@
 .ql-container{
   border-radius: 0 0 var(--radius-lg) var(--radius-lg);
   background: var(--card-bg);
+  color: var(--text)
 }
 
 .ql-toolbar {
