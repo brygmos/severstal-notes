@@ -25,7 +25,6 @@
 .ql-toolbar {
   background: var(--toolbar-bg);
   border-radius: var(--radius-lg) var(--radius-lg) 0 0 ;
-  color: red;
 }
 
 .ql-toolbar span button:hover {

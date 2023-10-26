@@ -1,6 +1,6 @@
 import cls from './Sidebar.module.css'
 import {useAppDispatch, useAppSelector} from "../../app/hooks.ts";
-import {selectNotes, setActive} from "../../app/notesSlice.ts";
+import {cleanActive, selectNotes} from "../../app/notesSlice.ts";
 import {Note} from "../../types";
 import SidebarCard from "../SidebarCard/SidebarCard.tsx";
 import {useEffect} from "react";
@@ -19,7 +19,7 @@ const Sidebar = () => {
     }, [])
 
     const addHandler = () => {
-        dispatch(setActive({text: '', title: ''}))
+        dispatch(cleanActive())
         document.querySelector('.' + editorCls.editor)?.classList.remove('hide')
     }
 

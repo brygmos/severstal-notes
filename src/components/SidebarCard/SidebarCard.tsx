@@ -1,7 +1,7 @@
 import cls from './SidebarCard.module.css'
 import {Note} from "../../types";
 import {useAppDispatch} from "../../app/hooks.ts";
-import {removeNote, setActive} from "../../app/notesSlice.ts";
+import {removeNote, setActive, setEditing} from "../../app/notesSlice.ts";
 import editorCls from '../TextEditor/TextEditor.module.css'
 
 type Props = {
@@ -14,6 +14,7 @@ const SidebarCard = (props: Props) => {
 
     const clickCardHandler = () => {
         document.querySelector('.' + editorCls.editor)?.classList.remove('hide')
+        dispatch(setEditing())
         dispatch(setActive({text: note.text, title: note.title}))
     }
 

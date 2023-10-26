@@ -1,7 +1,7 @@
 import cls from './TextEditor.module.css'
 import {useEffect, useState} from "react";
 import {useAppDispatch, useAppSelector} from "../../app/hooks.ts";
-import {addNote, selectActiveNote, selectActiveNoteNotUnique} from "../../app/notesSlice.ts";
+import {addNote, editNote, selectActiveNote, selectActiveNoteNotUnique, selectIsEditing} from "../../app/notesSlice.ts";
 import {Note} from "../../types";
 import Quill from "../Quill/Quill.tsx";
 
@@ -12,6 +12,7 @@ const TextEditor = () => {
 
     const note: Note = useAppSelector(selectActiveNote)
     const notUniqueTitle: boolean = useAppSelector(selectActiveNoteNotUnique)
+    const isEditing: boolean = useAppSelector(selectIsEditing)
 
     useEffect(() => {
         setText(note.text)
@@ -26,7 +27,9 @@ const TextEditor = () => {
     };
 
     const saveHandler = () => {
-        dispatch(addNote({text: text, title: title}))
+        isEditing
+            ? dispatch(editNote({text: text, title: title}))
+            : dispatch(addNote({text: text, title: title}))
     }
 
     const closeHandler = () => {
