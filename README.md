@@ -2,6 +2,11 @@
 
 Тестовое задание
 
+[Deploy](https://brygmos-notes.netlify.app)
+
+----
+
+
 ## Запуск
 - `npm install` — Установка зависимостей
 
