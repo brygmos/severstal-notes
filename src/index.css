@@ -12,6 +12,15 @@
   outline-color: var(--focus);
 }
 
+input {
+  background-color: var(--card-bg);
+  color: var(--text)
+}
+
+input::placeholder {
+  color: var(--placeholder-text)
+}
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -38,6 +47,10 @@ body {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+}
+
+h2 {
+  line-height: 1.2
 }
 
 input {

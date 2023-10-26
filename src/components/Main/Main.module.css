@@ -4,7 +4,7 @@
     max-width: 800px;
 }
 
-@media screen and (max-width: 420px){
+@media screen and (max-width: 660px){
     .main{
         padding: 0;
     }

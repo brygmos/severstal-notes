@@ -14,7 +14,7 @@
 }
 
 .textArea {
-    height: calc(100% - 185px);
+    height: calc(100% - 175px);
 }
 
 .buttonsBlock{
@@ -48,7 +48,7 @@
     width: 100%;
 }
 
-@media screen and (max-width: 420px){
+@media screen and (max-width: 660px){
     .editor{
         position: absolute;
         top: 0;
