@@ -31,7 +31,7 @@
     transition: all 0.2s;
 }
 
-@media screen and (max-width: 420px){
+@media screen and (max-width: 660px){
     .sidebar{
         width: 100%;
         height: 100%;
