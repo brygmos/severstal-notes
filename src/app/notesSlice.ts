@@ -13,11 +13,16 @@ export interface NotesState {
     isEditing: boolean,
 }
 
+function generatePreview(htmlString: string) {
+    return htmlString.substring(0, 50).replace(/<[^>]*>/g, '');
+}
+
 function initNotes () {
     const initialNotes = [
         {
             title: 'My first Note!',
-            text: 'Text of the note'
+            text: 'Text of the note',
+            preview: 'Text of the note'
         }
     ]
 
@@ -31,7 +36,8 @@ const initialState: NotesState = {
     notes: initNotes(),
     activeNoteContent: {
         title: '',
-        text: ''
+        text: '',
+        preview: '',
     },
     activeNoteIndex: 0,
     activeNoteNotUnique: false,
@@ -55,6 +61,7 @@ export const notesSlice = createSlice({
             state.isEditing = false
             const titleUnique = state.notes.filter((note) => note.title === action.payload.title).length !== 1
             if (titleUnique && !state.isEditing) {
+                action.payload.preview = generatePreview(action.payload.text)
                 state.notes.push(action.payload)
                 localStorage.setItem(NOTES_LOCALSTORAGE_KEY, JSON.stringify(state.notes))
                 state.activeNoteContent = {title: '', text: ''}
@@ -73,6 +80,7 @@ export const notesSlice = createSlice({
                                 if(note.title == state.activeNoteContent.title) {
                                     note.title = action.payload.title;
                                     note.text = action.payload.text;
+                                    note.preview = generatePreview(action.payload.text);
                                 }
                                 return note
                             })
@@ -94,7 +102,6 @@ export const notesSlice = createSlice({
             state.activeNoteContent = {title: '', text: ''}
             state.activeNoteNotUnique = false
             state.isEditing = false
-
         },
         removeNote: (state, action: PayloadAction<Note>) => {
             state.notes = state.notes.filter((note) => {
