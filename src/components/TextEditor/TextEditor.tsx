@@ -33,7 +33,7 @@ const TextEditor = () => {
     }
 
     const closeHandler = () => {
-        document.querySelector('.' + cls.editor)?.classList.add('hide')
+        document.querySelector('main')?.classList.add('hide')
     }
 
     const saveDisabled = !text || !title || (text == note.text && title == note.title)
@@ -54,7 +54,7 @@ const TextEditor = () => {
                 onChange={handleTitleChange}
                 autoFocus
             />
-            <Quill value={text} onChange={handleTextChange} className={cls.textArea}/>
+            <Quill value={text} onChange={handleTextChange}/>
         </div>
     );
 };

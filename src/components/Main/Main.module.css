@@ -7,5 +7,9 @@
 @media screen and (max-width: 660px){
     .main{
         padding: 0;
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        top: 0;
     }
 }

@@ -5,7 +5,7 @@ import textEditorCls from '../TextEditor/TextEditor.module.css'
 type Props = {
     value: string,
     onChange: (value: string) => void,
-    className: string
+    className?: string
 }
 
 function Quill(props: Props) {

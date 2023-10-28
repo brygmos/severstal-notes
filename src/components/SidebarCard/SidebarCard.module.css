@@ -46,3 +46,9 @@
 .sidebarCard:not(:hover) .iconButton{
     display: none;
 }
+
+@media screen and (max-width: 660px){
+    .sidebarCard:not(:hover) .iconButton{
+        display: block;
+    }
+}
