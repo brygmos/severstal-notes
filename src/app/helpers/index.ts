@@ -14,5 +14,5 @@ export function getTheme() {
 }
 
 export function generatePreview(htmlString: string) {
-    return htmlString.substring(0, 50).replace(/<[^>]*>/g, '');
+    return htmlString.substring(0, 150).replace(/<[^>]*>/g, '');
 }
