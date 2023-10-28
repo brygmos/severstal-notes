@@ -1,8 +1,7 @@
 import {fireEvent, render, screen} from '@testing-library/react';
-// import { describe, expect, it } from 'vitest';
 import '@testing-library/jest-dom'
 import TextEditor from "../components/TextEditor/TextEditor.tsx";
-import {describe, expect, it} from "vitest";
+import {describe, it, expect} from "vitest";
 import {Provider} from "react-redux";
 import { store } from '../app/store.ts';
 
@@ -42,12 +41,10 @@ describe('textEditor', () => {
             </Provider>
         );
 
-        // const closeBtn = screen.getByRole("button", {name: "Закрыть"});
         const closeBtn = screen.getByRole("button", {name: "Сохранить"});
 
         fireEvent.click(closeBtn);
 
-        // expect(screen.getByPlaceholderText('Название')).toHaveAttribute('disabled');
         expect(screen.getByRole("button", {name: "Сохранить"})).toHaveAttribute('disabled');
 
     });
