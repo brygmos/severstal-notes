@@ -45,12 +45,16 @@ button:hover.sidebarCard:hover {
     right: 10px;
 }
 
-.iconButton:hover {
+.iconButton:hover, .iconButton:focus {
     opacity: 0.5;
 }
 
-.sidebarCard:not(:hover) .iconButton{
+.sidebarCard:not(:hover, :focus) .iconButton{
     display: none;
+}
+
+.sidebarCard:focus-within .iconButton{
+    display: block;
 }
 
 @media screen and (max-width: 660px){
