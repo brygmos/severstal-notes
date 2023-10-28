@@ -68,7 +68,9 @@ button {
   background-color: var(--button);
   cursor: pointer;
   transition: border-color 0.2s;
+  display: inline-block;
   line-height: 1em;
+  vertical-align: middle;
 }
 
 button:disabled {

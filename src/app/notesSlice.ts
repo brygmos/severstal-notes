@@ -53,7 +53,7 @@ export const notesSlice = createSlice({
                 localStorage.setItem(NOTES_LOCALSTORAGE_KEY, JSON.stringify(state.notes))
                 state.activeNoteContent = {title: '', text: ''}
                 state.activeNoteNotUnique = false
-                document.querySelector('.' + cls.editor)?.classList.add('hide')
+                document.querySelector('main')?.classList.add('hide')
             } else state.activeNoteNotUnique = true
         },
         editNote: (state, action: PayloadAction<Note>) => {
@@ -74,7 +74,7 @@ export const notesSlice = createSlice({
                 state.notes = editedNotes;
                 localStorage.setItem(NOTES_LOCALSTORAGE_KEY, JSON.stringify(editedNotes))
                 state.activeNoteNotUnique = false
-                document.querySelector('.' + cls.editor)?.classList.add('hide')
+                document.querySelector('main')?.classList.add('hide')
             } else state.activeNoteNotUnique = true
         },
         setActive: (state, action: PayloadAction<Note> ) => {

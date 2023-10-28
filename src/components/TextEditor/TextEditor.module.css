@@ -5,18 +5,6 @@
     flex-direction: column;
 }
 
-.textArea{
-    margin-top: 2rem;
-    min-height: 100px;
-    border-radius: var(--radius-sm);
-    font-size: 16px;
-    min-width: 380px;
-}
-
-.textArea {
-    height: calc(100% - 175px);
-}
-
 .buttonsBlock{
     display: flex;
     justify-content: space-between;
@@ -27,10 +15,10 @@
 }
 
 .buttonsBlock span{
+    color: var(--error);
     margin-left: 1rem;
     display: inline-flex;
     align-items: center;
-    color: var(--error);
     order: 2;
 }
 
@@ -44,7 +32,6 @@
     font-size: 18px;
     padding: 0 1rem;
     border-radius: var(--radius-sm);
-    /*width: calc(100% - 2rem);*/
     width: 100%;
 }
 
@@ -54,6 +41,7 @@
         top: 0;
         background-color: var(--light-bg);
         height: 100vh;
+        width: 100vw;
         padding: 1rem;
     }
     .title{
@@ -65,7 +53,7 @@
         width: 100%;
         font-size: 20px;
         resize: none;
-        max-width: unset;
+        min-width: unset;
     }
     .buttonsBlock{
         justify-content: space-between;

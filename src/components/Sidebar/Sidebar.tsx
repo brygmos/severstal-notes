@@ -21,7 +21,7 @@ const Sidebar = () => {
 
     const addHandler = () => {
         dispatch(cleanActive())
-        document.querySelector('.' + editorCls.editor)?.classList.remove('hide')
+        document.querySelector('main')?.classList.remove('hide')
     }
 
     const toggleTheme = () => {

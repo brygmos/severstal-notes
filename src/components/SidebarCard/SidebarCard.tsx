@@ -13,7 +13,7 @@ const SidebarCard = (props: Props) => {
     const dispatch = useAppDispatch()
 
     const clickCardHandler = () => {
-        document.querySelector('.' + editorCls.editor)?.classList.remove('hide')
+        document.querySelector('main')?.classList.remove('hide')
         dispatch(setEditing())
         dispatch(setActive({text: note.text, title: note.title}))
     }
