@@ -2,7 +2,6 @@ import cls from './SidebarCard.module.css'
 import {Note} from "../../types";
 import {useAppDispatch} from "../../app/hooks.ts";
 import {removeNote, setActive, setEditing} from "../../app/notesSlice.ts";
-import editorCls from '../TextEditor/TextEditor.module.css'
 
 type Props = {
     note: Note

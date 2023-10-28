@@ -5,7 +5,6 @@ import {Note} from "../../types";
 import SidebarCard from "../SidebarCard/SidebarCard.tsx";
 import {useEffect} from "react";
 import {NOTES_LOCALSTORAGE_KEY, THEME_LOCALSTORAGE_KEY} from "../../app/const";
-import editorCls from '../TextEditor/TextEditor.module.css'
 import {getTheme, setTheme} from "../../app/helpers";
 
 const Sidebar = () => {

@@ -2,7 +2,6 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 import { RootState } from "./store"
 import {Note} from "../types";
 import {NOTES_LOCALSTORAGE_KEY} from "./const";
-import cls from "../components/TextEditor/TextEditor.module.css";
 import {generatePreview} from "./helpers";
 
 export interface NotesState {
