@@ -44,7 +44,6 @@ const Sidebar = () => {
                 </button>
             </div>
             {notes && notes.map((note) => <SidebarCard key={note.title} note={note}/>)}
-
         </aside>
     );
 };

@@ -1,5 +1,5 @@
 import cls from './TextEditor.module.css'
-import {useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import {useAppDispatch, useAppSelector} from "../../app/hooks.ts";
 import {addNote, editNote, selectActiveNote, selectActiveNoteNotUnique, selectIsEditing} from "../../app/notesSlice.ts";
 import {Note} from "../../types";
