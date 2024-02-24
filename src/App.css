@@ -44,3 +44,27 @@ div.ql-toolbar {
   background: var(--toolbar-bg);
   border-radius: var(--radius-lg) var(--radius-lg) 0 0 ;
 }
+
+.ql-snow.ql-toolbar button:hover .ql-stroke,
+.ql-snow.ql-toolbar .ql-picker-label:hover,
+.ql-snow.ql-toolbar .ql-picker-label:hover .ql-stroke
+{
+  stroke: var(--text) !important;
+  color: var(--text) !important;
+}
+
+.ql-snow.ql-toolbar .ql-picker-label:hover,
+.ql-snow.ql-toolbar .ql-picker-label:hover .ql-stroke
+{
+  stroke: var(--hint) !important;
+  color: var(--hint) !important;
+}
+
+.ql-snow.ql-toolbar .ql-active,
+.ql-snow.ql-toolbar .ql-active .ql-stroke,
+.ql-picker-item:hover,
+.ql-picker-item.ql-selected
+{
+  stroke: var(--accent) !important;
+  color: var(--accent) !important;
+}

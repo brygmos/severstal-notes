@@ -61,7 +61,7 @@ button {
   color: var(--text);
   border: none;
   border-radius: var(--radius-sm);
-  padding: 0.6em 1.2em;
+  padding: 0.6em 1.2em 0.9em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
