@@ -45,7 +45,11 @@ export const notesSlice = createSlice({
     reducers: {
         addNote: (state, action: PayloadAction<Note>) => {
             state.isEditing = false
-            const titleUnique = state.notes.filter((note) => note.title === action.payload.title).length !== 1
+            state.activeNoteNotUnique = false
+            let titleUnique
+            if (action.payload.title != '') {
+                titleUnique = state.notes.filter((note) => note.title === action.payload.title).length !== 1
+            } else  titleUnique = true
             if (titleUnique && !state.isEditing) {
                 action.payload.preview = generatePreview(action.payload.text)
                 state.notes.push(action.payload)
@@ -96,6 +100,9 @@ export const notesSlice = createSlice({
             localStorage.setItem(NOTES_LOCALSTORAGE_KEY, JSON.stringify(state.notes))
             state.activeNoteContent = {title: '', text: ''}
         },
+        setActiveNoteNotUniqueToFalse: (state) => {
+            state.activeNoteNotUnique = false
+        },
     },
 })
 
@@ -105,7 +112,8 @@ export const {
     cleanActive,
     removeNote,
     editNote,
-    setEditing
+    setEditing,
+    setActiveNoteNotUniqueToFalse
 } = notesSlice.actions
 export const selectNotes = (state: RootState) => state.notes.notes
 export const selectActiveNote = (state: RootState) => state.notes.activeNoteContent
